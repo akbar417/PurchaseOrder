@@ -1,0 +1,29 @@
+{
+  "xsappname": "commytestpopurchaseorders",
+  "tenant-mode": "dedicated",
+  "description": "Security profile of called application",
+  "scopes": [
+    {
+    "name": "$XSAPPNAME.POViewer",
+    "description": "Purchase Orders Role"
+    }
+   ],
+   "role-templates": [
+    {
+    "name": "POViewerRole",
+    "description": "Purchase Orders Role Template",
+    "scope-references": [
+        "$XSAPPNAME.POViewer"
+    ]
+    }
+   ],
+   "role-collections": [
+        {
+        "name": "BPViewerRC",
+        "description": "Purchase Orders Role Collection",
+        "role-template-references": [
+        "$XSAPPNAME.POViewerRole"
+            ]
+        }
+    ]
+}
